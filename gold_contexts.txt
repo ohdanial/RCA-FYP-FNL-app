@@ -1,0 +1,1311 @@
+########## G01 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=9.93.96.159 | hour=2020-03-08 01:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 374 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-03-08 00:00:00+00:00 to 2020-03-08 03:00:00+00:00 | related events=45
+TOP EVENTS IN WINDOW: DescribeSnapshots x34, ListBuckets x5, GetCallerIdentity x4, DescribeInstances x2
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x39, arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 x4
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x3
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-03-08 01:17:54+00:00       ListBuckets  s3.amazonaws.com     9.93.96.159 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.16.310 Python/3.7.3 Linux/5.0      1
+2020-03-08 01:18:01+00:00 GetCallerIdentity sts.amazonaws.com     9.93.96.159 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+
+SURROUNDING EVENTS (43 events, 10 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-03-08 00:13:49+00:00       ListBuckets  s3.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None [aws-cli/1.16.310 Python/3.7.3 Linux/5.0      1
+2020-03-08 00:20:50+00:00 DescribeInstances ec2.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+2020-03-08 00:24:12+00:00 DescribeSnapshots ec2.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.     33
+2020-03-08 00:28:39+00:00 DescribeInstances ec2.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+2020-03-08 00:29:23+00:00 DescribeSnapshots ec2.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+2020-03-08 00:30:45+00:00 GetCallerIdentity sts.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+2020-03-08 00:59:33+00:00       ListBuckets  s3.amazonaws.com     9.93.96.159                          arn:aws:iam::123456789012:user/name-4         None [aws-cli/1.16.310 Python/3.7.3 Linux/5.0      1
+2020-03-08 01:14:05+00:00 GetCallerIdentity sts.amazonaws.com     9.93.96.159 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+2020-03-08 01:14:14+00:00       ListBuckets  s3.amazonaws.com     9.93.96.159 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.310 Python/3.7.3 Linux/5.0      2
+2020-03-08 01:17:43+00:00 GetCallerIdentity sts.amazonaws.com     9.93.96.159 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41         None aws-cli/1.16.310 Python/3.7.3 Linux/5.0.      1
+
+########## G02 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=121.6.237.250 | hour=2020-03-05 22:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 372 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-03-05 21:00:00+00:00 to 2020-03-06 00:00:00+00:00 | related events=67
+TOP EVENTS IN WINDOW: DescribeSnapshots x43, ListBuckets x6, DescribeHosts x4, GetRestApis x3, GetCallerIdentity x2, GetPolicyVersion x2, DescribeVolumes x1, GetBucketAcl x1, GetUser x1, ListAttachedUserPolicies x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x52, arn:aws:iam::123456789012:user/name-2 x13, arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 x1
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x6, Client.InvalidUserID.Malformed x2, NotFoundException x1
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-03-05 22:13:00+00:00 ListBuckets s3.amazonaws.com   121.6.237.250 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.17.10 Python/3.8.1 Darwin/18.      1
+
+SURROUNDING EVENTS (66 events, 10 rows shown, repeats merged):
+                eventTime           eventName              eventSource sourceIPAddress                       userIdentityarn         errorCode                                userAgent  count
+2020-03-05 21:26:16+00:00         ListBuckets         s3.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-4              None [aws-cli/1.17.10 Python/3.8.1 Darwin/18.      1
+2020-03-05 21:28:50+00:00   DescribeSnapshots        ec2.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-4              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7     20
+2020-03-05 21:32:43+00:00       DescribeHosts        ec2.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-4              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+2020-03-05 21:34:37+00:00   DescribeSnapshots        ec2.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-4              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7     17
+2020-03-05 21:36:08+00:00       DescribeHosts        ec2.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-4              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      3
+2020-03-05 22:23:35+00:00    GetPolicyVersion        iam.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-2              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+2020-03-05 22:23:45+00:00         GetRestApis apigateway.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-2      AccessDenied aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+2020-03-05 22:24:09+00:00          GetRestApi apigateway.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-2 NotFoundException aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+2020-03-05 22:24:33+00:00         GetRestApis apigateway.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-2      AccessDenied aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+2020-03-05 22:25:45+00:00 ListFunctions202224     lambda.amazonaws.com   121.6.237.250 arn:aws:iam::123456789012:user/name-2              None aws-cli/1.17.10 Python/3.8.1 Darwin/18.7      1
+
+########## G03 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=252.121.22.160 | hour=2020-01-26 10:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 351 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-01-26 09:00:00+00:00 to 2020-01-26 12:00:00+00:00 | related events=20
+TOP EVENTS IN WINDOW: ListBuckets x4, ListFunctions202224 x3, GetCallerIdentity x2, GetPolicy x2, GetPolicyVersion x2, DescribeSnapshots x1, DescribeSnapshotAttribute x1, DescribeHosts x1, ListAttachedUserPolicies x1, GetFunction202224v2 x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x14, arn:aws:iam::123456789012:user/name-4 x4
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x3
+
+INCIDENT-HOUR EVENTS (2 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-01-26 10:16:38+00:00 ListBuckets s3.amazonaws.com  252.121.22.160 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.11.13 Python/3.5.2 Linux/4.4.      2
+
+SURROUNDING EVENTS (18 events, 10 rows shown, repeats merged):
+                eventTime                 eventName              eventSource sourceIPAddress                       userIdentityarn    errorCode                                userAgent  count
+2020-01-26 09:04:28+00:00         GetCallerIdentity        sts.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-4         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 09:05:17+00:00         DescribeSnapshots        ec2.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-4         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 09:07:15+00:00 DescribeSnapshotAttribute        ec2.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-4         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 10:18:40+00:00               ListBuckets         s3.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-4         None [aws-cli/1.11.13 Python/3.5.2 Linux/4.4.      1
+2020-01-26 10:24:18+00:00               ListBuckets         s3.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2         None [aws-cli/1.11.13 Python/3.5.2 Linux/4.4.      1
+2020-01-26 10:33:50+00:00          GetPolicyVersion        iam.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 10:35:58+00:00       ListFunctions202224     lambda.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      2
+2020-01-26 10:36:40+00:00       GetFunction202224v2     lambda.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2 AccessDenied aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 10:39:35+00:00         GetPolicy202224v2     lambda.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+2020-01-26 10:40:51+00:00                 GetStages apigateway.amazonaws.com  252.121.22.160 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.11.13 Python/3.5.2 Linux/4.4.0      1
+
+########## G04 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=157.125.252.225 | hour=2020-04-18 21:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 396 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-04-18 20:00:00+00:00 to 2020-04-18 23:00:00+00:00 | related events=79
+TOP EVENTS IN WINDOW: DescribeSnapshots x42, ListPolicies x8, ListBuckets x3, GetPolicy x3, ListUsers x2, ListRoles x2, ListAttachedUserPolicies x2, GetPolicyVersion x2, GetPolicy202224v2 x2, DescribeInstances x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x48, arn:aws:iam::123456789012:user/name-2 x30
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x5, Client.InvalidUserID.Malformed x2, Client.InvalidSnapshot.NotFound x2
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-04-18 21:48:32+00:00 ListBuckets s3.amazonaws.com 157.125.252.225 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.18.39 Python/3.8.2 Linux/5.5.      1
+
+SURROUNDING EVENTS (78 events, 10 rows shown, repeats merged):
+                eventTime           eventName              eventSource sourceIPAddress                       userIdentityarn                      errorCode                                userAgent  count
+2020-04-18 21:07:07+00:00         ListBuckets         s3.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-4                           None [aws-cli/1.18.39 Python/3.8.2 Linux/5.5.      1
+2020-04-18 21:09:46+00:00   DescribeSnapshots        ec2.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-4                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0     29
+2020-04-18 21:17:49+00:00   DescribeSnapshots        ec2.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-4 Client.InvalidUserID.Malformed aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      2
+2020-04-18 21:19:17+00:00   DescribeInstances        ec2.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-4                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+2020-04-18 21:19:40+00:00           ListUsers        iam.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-4                   AccessDenied aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+2020-04-18 22:09:42+00:00           GetPolicy        iam.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-2                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+2020-04-18 22:10:08+00:00    GetPolicyVersion        iam.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-2                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+2020-04-18 22:10:41+00:00 ListFunctions202224     lambda.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-2                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+2020-04-18 22:10:58+00:00   GetPolicy202224v2     lambda.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-2                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      2
+2020-04-18 22:11:54+00:00           GetStages apigateway.amazonaws.com 157.125.252.225 arn:aws:iam::123456789012:user/name-2                           None aws-cli/1.18.39 Python/3.8.2 Linux/5.5.0      1
+
+########## G05 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 | ip=250.29.255.135 | hour=2019-10-31 20:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2019-02-24 and was active on 35 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-10-31 19:00:00+00:00 to 2019-10-31 22:00:00+00:00 | related events=4
+TOP EVENTS IN WINDOW: ListBuckets x4
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x3
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x1
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2019-10-31 20:06:27+00:00 ListBuckets s3.amazonaws.com  250.29.255.135 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.265 Python/3.8.0 Linux/4.1      1
+
+SURROUNDING EVENTS (3 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                       userIdentityarn errorCode                                userAgent  count
+2019-10-31 19:38:38+00:00 ListBuckets s3.amazonaws.com  250.29.255.135 arn:aws:iam::123456789012:user/name-4      None [aws-cli/1.16.265 Python/3.8.0 Linux/4.1      3
+
+########## G06 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=254.2.53.157 | hour=2018-10-25 18:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 156 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2018-10-25 17:00:00+00:00 to 2018-10-25 20:00:00+00:00 | related events=13
+TOP EVENTS IN WINDOW: GetUser x3, ListAttachedUserPolicies x2, GetPolicy x2, GetPolicyVersion x2, ListFunctions202224 x1, GetFunction202224v2 x1, GetPolicy202224v2 x1, GetStages x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x10, arn:aws:iam::123456789012:user/name-4 x1
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x4
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime                eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2018-10-25 18:57:58+00:00                  GetUser iam.amazonaws.com    254.2.53.157 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 18:59:44+00:00 ListAttachedUserPolicies iam.amazonaws.com    254.2.53.157 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+
+SURROUNDING EVENTS (11 events, 9 rows shown, repeats merged):
+                eventTime                eventName              eventSource sourceIPAddress                       userIdentityarn    errorCode                                userAgent  count
+2018-10-25 18:58:10+00:00                  GetUser        iam.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 18:58:26+00:00                  GetUser        iam.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-4 AccessDenied aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 18:59:52+00:00 ListAttachedUserPolicies        iam.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 19:02:06+00:00                GetPolicy        iam.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      2
+2018-10-25 19:04:22+00:00         GetPolicyVersion        iam.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      2
+2018-10-25 19:08:56+00:00      ListFunctions202224     lambda.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 19:09:56+00:00      GetFunction202224v2     lambda.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2 AccessDenied aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 19:11:34+00:00        GetPolicy202224v2     lambda.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+2018-10-25 19:14:17+00:00                GetStages apigateway.amazonaws.com    254.2.53.157 arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.41 Python/2.7.15+ Linux/4.1      1
+
+########## G07 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=161.61.33.131 | hour=2019-07-22 03:00:00+00:00 | identity type=AssumedRole | flagged events=2
+HISTORY: this identity was first seen 2017-02-28 and was active on 265 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-07-22 02:00:00+00:00 to 2019-07-22 05:00:00+00:00 | related events=2
+TOP EVENTS IN WINDOW: GetCallerIdentity x1, ListAttachedUserPolicies x1
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x1
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime                eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2019-07-22 03:15:01+00:00        GetCallerIdentity sts.amazonaws.com   161.61.33.131 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41         None aws-cli/1.16.102 Python/2.7.16 Linux/4.1      1
+2019-07-22 03:16:23+00:00 ListAttachedUserPolicies iam.amazonaws.com   161.61.33.131 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.16.102 Python/2.7.16 Linux/4.1      1
+
+########## G08 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=36.3.255.3 | hour=2019-12-27 14:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 341 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-12-27 13:00:00+00:00 to 2019-12-27 16:00:00+00:00 | related events=51
+TOP EVENTS IN WINDOW: DescribeSnapshots x39, GetCallerIdentity x2, ListBuckets x1, DescribeInstances x1, DescribeSnapshotAttribute x1, GetUser x1, ListAttachedUserPolicies x1, GetPolicy x1, GetPolicyVersion x1, ListFunctions202224 x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x43, arn:aws:iam::123456789012:user/name-2 x7
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn errorCode                                userAgent  count
+2019-12-27 14:36:01+00:00 GetCallerIdentity sts.amazonaws.com      36.3.255.3 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+
+SURROUNDING EVENTS (50 events, 10 rows shown, repeats merged):
+                eventTime                 eventName              eventSource sourceIPAddress                       userIdentityarn errorCode                                userAgent  count
+2019-12-27 13:43:43+00:00               ListBuckets         s3.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-4      None [aws-cli/1.16.309 Python/2.7.17 Linux/5.      1
+2019-12-27 13:49:09+00:00         GetCallerIdentity        sts.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-4      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 13:49:42+00:00         DescribeSnapshots        ec2.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-4      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3     28
+2019-12-27 13:55:48+00:00         DescribeInstances        ec2.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-4      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 13:58:15+00:00 DescribeSnapshotAttribute        ec2.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-4      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 14:41:28+00:00                 GetPolicy        iam.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-2      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 14:42:21+00:00          GetPolicyVersion        iam.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-2      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 14:43:24+00:00       ListFunctions202224     lambda.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-2      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 14:44:08+00:00         GetPolicy202224v2     lambda.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-2      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+2019-12-27 14:45:29+00:00                 GetStages apigateway.amazonaws.com      36.3.255.3 arn:aws:iam::123456789012:user/name-2      None aws-cli/1.16.309 Python/2.7.17 Linux/5.3      1
+
+########## G09 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=1.6.83.254 | hour=2018-11-27 13:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 175 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x3, AWS internal service x0, other x0
+CONTEXT WINDOW: 2018-11-27 12:00:00+00:00 to 2018-11-27 15:00:00+00:00 | related events=97
+TOP EVENTS IN WINDOW: DescribeSnapshots x55, DescribeVolumes x6, ListBuckets x4, GetCallerIdentity x4, DescribeRegions x2, RunInstances x2, ListUsers x2, ListUserPolicies x2, ListGroupsForUser x2, ListRoles x2
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x77, arn:aws:iam::123456789012:user/name-2 x16
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: Client.UnauthorizedOperation x3, AccessDenied x2, Client.MissingParameter x1, Client.InvalidAMIID.Malformed x1, AccessDeniedException x1
+
+INCIDENT-HOUR EVENTS (3 events, 3 rows shown, repeats merged):
+                eventTime           eventName            eventSource sourceIPAddress                                                userIdentityarn                    errorCode                                userAgent  count
+2018-11-27 13:28:46+00:00     DescribeRegions      ec2.amazonaws.com      1.6.83.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 Client.UnauthorizedOperation aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:39:12+00:00 ListFunctions202224   lambda.amazonaws.com      1.6.83.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41                 AccessDenied aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:40:50+00:00 DescribePermissions opsworks.amazonaws.com      1.6.83.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41        AccessDeniedException aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+
+SURROUNDING EVENTS (94 events, 10 rows shown, repeats merged):
+                eventTime         eventName              eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2018-11-27 12:44:07+00:00       ListBuckets         s3.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-4         None [aws-cli/1.16.50 Python/3.7.1 Darwin/18.      1
+2018-11-27 12:50:45+00:00   DescribeRegions        ec2.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 12:51:49+00:00 GetCallerIdentity        sts.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 12:52:51+00:00 DescribeSnapshots        ec2.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 12:55:45+00:00   DescribeVolumes        ec2.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-4         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:51:46+00:00       GetRestApis apigateway.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:52:56+00:00        GetRestApi apigateway.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:55:19+00:00      GetResources apigateway.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 13:58:48+00:00         GetStages apigateway.amazonaws.com      1.6.83.254                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+2018-11-27 14:10:10+00:00         ListUsers        iam.amazonaws.com      1.6.83.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.16.50 Python/3.7.1 Darwin/18.0      1
+
+########## G10 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=248.7.255.165 | hour=2020-03-04 00:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 370 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-03-03 23:00:00+00:00 to 2020-03-04 02:00:00+00:00 | related events=147
+TOP EVENTS IN WINDOW: ListFunctions202224 x17, DescribeDirectConnectGateways x16, DescribeVpnConnections x16, DescribeVpcPeeringConnections x16, ListPolicies x14, GetPolicyVersion x7, GetPolicy x5, GetPolicy202224v2 x5, ListBuckets x4, GetCallerIdentity x4
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x139, arn:aws:iam::123456789012:user/name-4 x6
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x6, Client.InvalidParameterValue x2, NoSuchEntityException x2, Client.InvalidVolume.NotFound x1
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-03-04 00:00:06+00:00       ListBuckets  s3.amazonaws.com   248.7.255.165 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.16.300 Python/2.7.16 Linux/4.      1
+2020-03-04 00:00:18+00:00 GetCallerIdentity sts.amazonaws.com   248.7.255.165 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+
+SURROUNDING EVENTS (145 events, 10 rows shown, repeats merged):
+                eventTime           eventName              eventSource sourceIPAddress                       userIdentityarn                     errorCode                                userAgent  count
+2020-03-03 23:44:51+00:00         ListBuckets         s3.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-4                          None [aws-cli/1.16.300 Python/2.7.16 Linux/4.      1
+2020-03-03 23:46:08+00:00   DescribeInstances        ec2.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-4                          None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-03-03 23:47:27+00:00     DescribeVolumes        ec2.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-4  Client.InvalidParameterValue aws-cli/1.16.300 Python/2.7.16 Linux/4.1      2
+2020-03-03 23:47:43+00:00     DescribeVolumes        ec2.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-4                          None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-03-03 23:52:08+00:00        DetachVolume        ec2.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-4 Client.InvalidVolume.NotFound aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-03-04 01:12:03+00:00      GetAuthorizers apigateway.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-2                          None aws-cli/1.18.13 Python/3.7.4 Linux/4.14.      1
+2020-03-04 01:12:38+00:00 GetBasePathMappings apigateway.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-2                  AccessDenied aws-cli/1.18.13 Python/3.7.4 Linux/4.14.      1
+2020-03-04 01:13:24+00:00           GetStages apigateway.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-2                          None aws-cli/1.18.13 Python/3.7.4 Linux/4.14.      1
+2020-03-04 01:14:43+00:00           GetExport apigateway.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-2                          None aws-cli/1.18.13 Python/3.7.4 Linux/4.14.      2
+2020-03-04 01:19:58+00:00      ListContainers mediastore.amazonaws.com   248.7.255.165 arn:aws:iam::123456789012:user/name-2                          None aws-cli/1.18.13 Python/3.7.4 Linux/4.14.      1
+
+########## G11 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=220.252.24.7 | hour=2019-07-04 11:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 257 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-07-04 10:00:00+00:00 to 2019-07-04 13:00:00+00:00 | related events=9
+TOP EVENTS IN WINDOW: ListBuckets x4, GetUser x2, GetCallerIdentity x2, GetPolicyVersion x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x4
+OTHER IPs USED BY THIS IDENTITY: 255.210.255.187 x4
+ERRORS: AccessDenied x4
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn errorCode                                userAgent  count
+2019-07-04 11:45:51+00:00 GetCallerIdentity sts.amazonaws.com    220.252.24.7 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41      None aws-cli/1.16.193 Python/2.7.16 Linux/4.1      1
+
+SURROUNDING EVENTS (8 events, 6 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2019-07-04 11:29:53+00:00       ListBuckets  s3.amazonaws.com 255.210.255.187 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.16.193 Python/2.7.16 Linux/4.      3
+2019-07-04 11:43:11+00:00           GetUser iam.amazonaws.com 255.210.255.187 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.16.193 Python/2.7.16 Linux/4.1      1
+2019-07-04 11:45:11+00:00           GetUser iam.amazonaws.com    220.252.24.7                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.193 Python/2.7.16 Linux/4.1      1
+2019-07-04 11:51:07+00:00  GetPolicyVersion iam.amazonaws.com    220.252.24.7                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.193 Python/2.7.16 Linux/4.1      1
+2019-07-04 12:02:44+00:00 GetCallerIdentity sts.amazonaws.com    220.252.24.7                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.193 Python/2.7.16 Linux/4.1      1
+2019-07-04 12:30:32+00:00       ListBuckets  s3.amazonaws.com    220.252.24.7                          arn:aws:iam::123456789012:user/name-2         None [aws-cli/1.16.193 Python/2.7.16 Linux/4.      1
+
+########## G12 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 | ip=87.238.3.8 | hour=2020-04-14 21:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2019-02-24 and was active on 57 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x8, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-04-14 20:00:00+00:00 to 2020-04-14 23:00:00+00:00 | related events=161
+TOP EVENTS IN WINDOW: DescribeLogStreams x120, ListBuckets x8, DescribeLogGroups x4, GetCallerIdentity x3, ListTables x3, DescribeDBInstances x2, GetFunction202224v2 x2, DescribeDBSnapshots x1, GetBucketLocation x1, ListUsers x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x149
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: AccessDenied x18
+
+INCIDENT-HOUR EVENTS (8 events, 6 rows shown, repeats merged):
+                eventTime           eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-04-14 21:51:56+00:00         ListBuckets  s3.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.300 Python/2.7.16 Linux/4.      1
+2020-04-14 21:52:35+00:00   GetCallerIdentity sts.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 21:52:50+00:00         ListBuckets  s3.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.300 Python/2.7.16 Linux/4.      2
+2020-04-14 21:53:13+00:00 DescribeDBInstances rds.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 21:53:27+00:00 DescribeDBSnapshots rds.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 21:54:52+00:00   GetCallerIdentity sts.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      2
+
+SURROUNDING EVENTS (153 events, 10 rows shown, repeats merged):
+                eventTime         eventName              eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-04-14 22:04:28+00:00 GetBucketLocation         s3.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.300 Python/2.7.16 Linux/4.      1
+2020-04-14 22:18:27+00:00       ListBuckets         s3.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied [aws-cli/1.16.300 Python/2.7.16 Linux/4.      1
+2020-04-14 22:23:20+00:00         ListUsers        iam.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:23:42+00:00        ListTables   dynamodb.amazonaws.com      87.238.3.8 arn:aws:sts::123456789012:assumed-role/role-10/ec2-instance-41 AccessDenied aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:28:09+00:00       ListBuckets         s3.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None [aws-cli/1.16.300 Python/2.7.16 Linux/4.      2
+2020-04-14 22:46:08+00:00 GetPolicy202224v2     lambda.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:48:50+00:00        GetRestApi apigateway.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:49:02+00:00      GetResources apigateway.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:49:13+00:00    GetDeployments apigateway.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+2020-04-14 22:49:21+00:00         GetStages apigateway.amazonaws.com      87.238.3.8                          arn:aws:iam::123456789012:user/name-2         None aws-cli/1.16.300 Python/2.7.16 Linux/4.1      1
+
+########## G13 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=201.255.252.251 | hour=2020-09-04 05:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 453 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-09-04 04:00:00+00:00 to 2020-09-04 07:00:00+00:00 | related events=21
+TOP EVENTS IN WINDOW: GetPolicyVersion x4, ListAttachedUserPolicies x3, GetPolicy x3, GetPolicy202224v2 x3, GetRestApi x3, GetCallerIdentity x2, GetUser x1, ListFunctions202224 x1, GetStages x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x20
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NotFoundException x2
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                                                userIdentityarn errorCode                                userAgent  count
+2020-09-04 05:00:28+00:00 GetCallerIdentity sts.amazonaws.com 201.255.252.251 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+
+SURROUNDING EVENTS (20 events, 10 rows shown, repeats merged):
+                eventTime                eventName              eventSource sourceIPAddress                       userIdentityarn errorCode                                userAgent  count
+2020-09-04 05:03:03+00:00        GetCallerIdentity        sts.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:08:40+00:00                  GetUser        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:09:43+00:00 ListAttachedUserPolicies        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:12:04+00:00                GetPolicy        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:12:52+00:00         GetPolicyVersion        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:48:09+00:00               GetRestApi apigateway.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:53:53+00:00        GetPolicy202224v2     lambda.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:56:19+00:00 ListAttachedUserPolicies        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:56:32+00:00                GetPolicy        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+2020-09-04 05:56:41+00:00         GetPolicyVersion        iam.amazonaws.com 201.255.252.251 arn:aws:iam::123456789012:user/name-2      None aws-cli/2.0.34 Python/3.7.3 Linux/4.15.0      1
+
+########## G14 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=252.243.3.35 | hour=2020-10-02 06:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 468 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-10-02 05:00:00+00:00 to 2020-10-02 08:00:00+00:00 | related events=6
+TOP EVENTS IN WINDOW: GetUser x3, DescribeTrails x1, ListAttachedUserPolicies x1, ListBuckets x1
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 55.169.158.6 x2, 251.2.248.254 x2, 9.39.239.225 x1
+ERRORS: AccessDenied x6
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime      eventName              eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-10-02 06:39:23+00:00 DescribeTrails cloudtrail.amazonaws.com    252.243.3.35 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.18.148 Python/2.7.15rc1 Linux/      1
+
+SURROUNDING EVENTS (5 events, 5 rows shown, repeats merged):
+                eventTime                eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-10-02 06:39:41+00:00                  GetUser iam.amazonaws.com    9.39.239.225 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.18.148 Python/2.7.15rc1 Linux/      1
+2020-10-02 07:25:08+00:00                  GetUser iam.amazonaws.com    55.169.158.6 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.18.148 Python/2.7.15rc1 Linux/      1
+2020-10-02 07:25:14+00:00                  GetUser iam.amazonaws.com   251.2.248.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.18.148 Python/2.7.15rc1 Linux/      1
+2020-10-02 07:25:46+00:00 ListAttachedUserPolicies iam.amazonaws.com   251.2.248.254 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/1.18.148 Python/2.7.15rc1 Linux/      1
+2020-10-02 07:26:14+00:00              ListBuckets  s3.amazonaws.com    55.169.158.6 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied [aws-cli/1.18.148 Python/2.7.15rc1 Linux      1
+
+########## G15 | label: credential_abuse ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 | ip=255.251.180.251 | hour=2020-09-28 09:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity was first seen 2017-02-28 and was active on 466 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2020-09-28 08:00:00+00:00 to 2020-09-28 11:00:00+00:00 | related events=11
+TOP EVENTS IN WINDOW: GetUser x3, ListAttachedUserPolicies x2, ListBuckets x1, GetPolicy x1, GetPolicyVersion x1, ListFunctions202224 x1, GetPolicy202224v2 x1, GetStages x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x9
+OTHER IPs USED BY THIS IDENTITY: 1.253.8.252 x1
+ERRORS: AccessDenied x2, NoSuchEntityException x1
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime eventName       eventSource sourceIPAddress                                                userIdentityarn    errorCode                                userAgent  count
+2020-09-28 09:30:17+00:00   GetUser iam.amazonaws.com 255.251.180.251 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41 AccessDenied aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+
+SURROUNDING EVENTS (10 events, 10 rows shown, repeats merged):
+                eventTime                eventName              eventSource sourceIPAddress                                                userIdentityarn             errorCode                                userAgent  count
+2020-09-28 08:43:21+00:00              ListBuckets         s3.amazonaws.com     1.253.8.252 arn:aws:sts::123456789012:assumed-role/role-12/ec2-instance-41          AccessDenied [aws-cli/1.17.13 Python/3.6.0 Linux/4.4.      1
+2020-09-28 09:32:03+00:00                  GetUser        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:32:26+00:00 ListAttachedUserPolicies        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2 NoSuchEntityException aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:32:57+00:00                  GetUser        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:33:04+00:00 ListAttachedUserPolicies        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:35:15+00:00                GetPolicy        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:35:43+00:00         GetPolicyVersion        iam.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:36:50+00:00      ListFunctions202224     lambda.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:37:26+00:00        GetPolicy202224v2     lambda.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+2020-09-28 09:37:48+00:00                GetStages apigateway.amazonaws.com 255.251.180.251                          arn:aws:iam::123456789012:user/name-2                  None aws-cli/2.0.52 Python/3.7.4 Darwin/18.7.      1
+
+########## G16 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-05-28 16:00:00+00:00 | identity type=Root | flagged events=3
+HISTORY: this identity was first seen 2017-02-12 and was active on 31 earlier days; it used this IP on 31 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x17, CLI/SDK script x0, AWS internal service x1, other x1
+CONTEXT WINDOW: 2017-05-28 15:00:00+00:00 to 2017-05-28 18:00:00+00:00 | related events=19
+TOP EVENTS IN WINDOW: GetAccountPasswordPolicy x3, ListMFADevices x3, ListAccountAliases x3, ListAccessKeys x3, GetAccountSummary x3, ListBuckets x2, GetSessionToken x1, ConsoleLogin x1
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x3
+
+INCIDENT-HOUR EVENTS (19 events, 16 rows shown, repeats merged):
+                eventTime                eventName          eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2017-05-28 16:40:16+00:00          GetSessionToken    sts.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                     signin.amazonaws.com      1
+2017-05-28 16:40:16+00:00             ConsoleLogin signin.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Mozilla/5.0 (Windows NT 6.3; Win64; x64)      1
+2017-05-28 16:40:18+00:00              ListBuckets     s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None          [S3Console/0.4, aws-internal/3]      2
+2017-05-28 16:40:24+00:00 GetAccountPasswordPolicy    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-05-28 16:40:24+00:00           ListMFADevices    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:24+00:00       ListAccountAliases    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:24+00:00           ListAccessKeys    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:24+00:00        GetAccountSummary    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      2
+2017-05-28 16:40:48+00:00 GetAccountPasswordPolicy    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-05-28 16:40:48+00:00           ListMFADevices    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:48+00:00           ListAccessKeys    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:48+00:00       ListAccountAliases    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      2
+2017-05-28 16:40:49+00:00           ListAccessKeys    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:49+00:00           ListMFADevices    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:49+00:00        GetAccountSummary    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-05-28 16:40:49+00:00 GetAccountPasswordPolicy    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+
+########## G17 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-06-29 12:00:00+00:00 | identity type=Root | flagged events=4
+HISTORY: this identity was first seen 2017-02-12 and was active on 35 earlier days; it used this IP on 35 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x55, CLI/SDK script x0, AWS internal service x1, other x1
+CONTEXT WINDOW: 2017-06-29 11:00:00+00:00 to 2017-06-29 14:00:00+00:00 | related events=58
+TOP EVENTS IN WINDOW: ListInstanceProfilesForRole x13, ListRolePolicies x13, ListAccountAliases x6, GetAccountSummary x4, GetAccountPasswordPolicy x4, ListMFADevices x4, ListAccessKeys x4, ListRoles x3, ConsoleLogin x1, GetSessionToken x1
+OTHER IDENTITIES USING THIS IP: None x1
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x4
+
+INCIDENT-HOUR EVENTS (57 events, 20 rows shown, repeats merged):
+                eventTime                   eventName          eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2017-06-29 12:45:45+00:00                ConsoleLogin signin.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Mozilla/5.0 (Macintosh; Intel Mac OS X 1      1
+2017-06-29 12:45:45+00:00             GetSessionToken    sts.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                     signin.amazonaws.com      1
+2017-06-29 12:45:46+00:00           GetAccountSummary    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:46+00:00          ListAccountAliases    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:46+00:00    GetAccountPasswordPolicy    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-06-29 12:45:47+00:00              ListMFADevices    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:47+00:00              ListAccessKeys    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:47+00:00           GetAccountSummary    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:47+00:00          ListAccountAliases    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:45:47+00:00              ListAccessKeys    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00                   ListRoles    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00 ListInstanceProfilesForRole    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00            ListRolePolicies    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00 ListInstanceProfilesForRole    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      2
+2017-06-29 12:52:59+00:00            ListRolePolicies    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      2
+2017-06-29 12:52:59+00:00 ListInstanceProfilesForRole    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00            ListRolePolicies    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:52:59+00:00 ListInstanceProfilesForRole    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:53:03+00:00    ListAttachedRolePolicies    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-06-29 12:53:03+00:00          ListAccountAliases    iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+
+SURROUNDING EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode                                userAgent  count
+2017-06-29 13:51:41+00:00 AssumeRole sts.amazonaws.com 255.253.125.115            None      None aws-cli/1.11.86 Python/2.7.13 Darwin/16.      1
+
+########## G18 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-02-12 19:00:00+00:00 | identity type=Root | flagged events=3
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x11, CLI/SDK script x0, AWS internal service x0, other x0
+CONTEXT WINDOW: 2017-02-12 18:00:00+00:00 to 2017-02-12 21:00:00+00:00 | related events=377
+TOP EVENTS IN WINDOW: GetBucketLocation x27, DescribeVolumes x20, DescribeVolumeStatus x20, DescribeTrails x16, GetBucketVersioning x15, DescribeInstances x13, DescribeInstanceStatus x13, DescribeSnapshots x11, GetAccountPasswordPolicy x9, ListAccountAliases x9
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 85.50.251.255 x26, AWS Internal x17, 178.188.9.103 x11, 102.243.123.0 x9
+ERRORS: NoSuchEntityException x9, ReplicationConfigurationNotFoundError x7, NoSuchLifecycleConfiguration x7, NoSuchTagSet x7, NoSuchCORSConfiguration x7
+
+INCIDENT-HOUR EVENTS (11 events, 10 rows shown, repeats merged):
+                eventTime                eventName       eventSource sourceIPAddress                userIdentityarn             errorCode             userAgent  count
+2017-02-12 19:57:06+00:00              ListBuckets  s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None       [S3Console/0.4]      1
+2017-02-12 19:59:10+00:00 GetAccountPasswordPolicy iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException console.amazonaws.com      1
+2017-02-12 19:59:10+00:00        GetAccountSummary iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+2017-02-12 19:59:10+00:00       ListAccountAliases iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+2017-02-12 19:59:10+00:00           ListMFADevices iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+2017-02-12 19:59:10+00:00           ListAccessKeys iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      2
+2017-02-12 19:59:10+00:00 GetAccountPasswordPolicy iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException console.amazonaws.com      1
+2017-02-12 19:59:10+00:00        GetAccountSummary iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+2017-02-12 19:59:10+00:00       ListAccountAliases iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+2017-02-12 19:59:10+00:00           ListMFADevices iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.amazonaws.com      1
+
+SURROUNDING EVENTS (366 events, 10 rows shown, repeats merged):
+                eventTime          eventName              eventSource sourceIPAddress                userIdentityarn errorCode                       userAgent  count
+2017-02-12 20:02:34+00:00     DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:02:35+00:00        ListBuckets         s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root      None [AWSCloudTrail, aws-internal/3]      1
+2017-02-12 20:02:37+00:00         ListTopics        sns.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None   AWSCloudTrail, aws-internal/3      1
+2017-02-12 20:02:37+00:00     DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:03:23+00:00       CreateBucket         s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root      None [AWSCloudTrail, aws-internal/3]      1
+2017-02-12 20:58:27+00:00          GetPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:58:27+00:00 ListAccountAliases        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:58:27+00:00   AttachUserPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:58:27+00:00     ListAccessKeys        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+2017-02-12 20:58:27+00:00          ListUsers        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None           console.amazonaws.com      1
+
+########## G19 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-04-09 21:00:00+00:00 | identity type=Root | flagged events=1
+HISTORY: this identity was first seen 2017-02-12 and was active on 25 earlier days; it used this IP on 25 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x2, CLI/SDK script x0, AWS internal service x4, other x1
+CONTEXT WINDOW: 2017-04-09 20:00:00+00:00 to 2017-04-09 23:00:00+00:00 | related events=10
+TOP EVENTS IN WINDOW: ListBuckets x3, ConsoleLogin x1, GetSessionToken x1, GetUser x1, DescribeTrails x1, DescribeConfigurationRecorderStatus x1, DescribeConfigurationRecorders x1, LookupEvents x1
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: AWS Internal x3
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (7 events, 7 rows shown, repeats merged):
+                eventTime                           eventName              eventSource sourceIPAddress                userIdentityarn errorCode                                userAgent  count
+2017-04-09 21:33:24+00:00                        ConsoleLogin     signin.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None Mozilla/5.0 (Windows NT 6.3; WOW64) Appl      1
+2017-04-09 21:33:24+00:00                     GetSessionToken        sts.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None                     signin.amazonaws.com      1
+2017-04-09 21:33:26+00:00                             GetUser        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None                           aws-internal/3      1
+2017-04-09 21:34:31+00:00                      DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None                    console.amazonaws.com      1
+2017-04-09 21:34:33+00:00 DescribeConfigurationRecorderStatus     config.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None            AWSCloudTrail, aws-internal/3      1
+2017-04-09 21:34:33+00:00      DescribeConfigurationRecorders     config.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None            AWSCloudTrail, aws-internal/3      1
+2017-04-09 21:34:33+00:00                        LookupEvents cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None                    console.amazonaws.com      1
+
+SURROUNDING EVENTS (3 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                userIdentityarn errorCode                        userAgent  count
+2017-04-09 21:33:26+00:00 ListBuckets s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root      None [AWS Console S3, aws-internal/3]      3
+
+########## G20 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-02-13 03:00:00+00:00 | identity type=Root | flagged events=205
+HISTORY: this identity was first seen 2017-02-12 and was active on 2 earlier days; it used this IP on 2 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x199, CLI/SDK script x1, AWS internal service x5, other x0
+CONTEXT WINDOW: 2017-02-13 02:00:00+00:00 to 2017-02-13 05:00:00+00:00 | related events=237
+TOP EVENTS IN WINDOW: DescribeInstances x21, DescribeVolumes x20, DescribeVolumeStatus x20, GetPolicyVersion x17, DescribeInstanceStatus x14, ListPolicyVersions x10, DescribeTags x8, GetPolicy x8, DescribeLoadBalancers x8, DescribeAddresses x6
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x6
+OTHER IPs USED BY THIS IDENTITY: 178.188.9.103 x13, 196.6.57.238 x13
+ERRORS: NoSuchEntityException x6, Client.UnauthorizedOperation x5, LimitExceededException x1
+
+INCIDENT-HOUR EVENTS (205 events, 20 rows shown, repeats merged):
+                eventTime                 eventName       eventSource sourceIPAddress                userIdentityarn             errorCode                 userAgent  count
+2017-02-13 03:02:46+00:00          DescribeIdFormat ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:46+00:00    DescribeInstanceStatus ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:46+00:00         DescribeAddresses ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:46+00:00         DescribeInstances ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:46+00:00            DescribeImages ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:47+00:00      ListInstanceProfiles iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None            aws-internal/3      2
+2017-02-13 03:02:47+00:00 DescribeInstanceAttribute ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:47+00:00           DescribeVolumes ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:47+00:00      DescribeVolumeStatus ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:02:47+00:00            DescribeImages ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None console.ec2.amazonaws.com      1
+2017-02-13 03:18:50+00:00            ListMFADevices iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:50+00:00            ListAccessKeys iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:50+00:00         GetAccountSummary iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:50+00:00  GetAccountPasswordPolicy iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException     console.amazonaws.com      1
+2017-02-13 03:18:52+00:00            ListAccessKeys iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:52+00:00        ListAccountAliases iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:52+00:00            ListMFADevices iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:52+00:00         GetAccountSummary iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+2017-02-13 03:18:52+00:00  GetAccountPasswordPolicy iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException     console.amazonaws.com      1
+2017-02-13 03:18:58+00:00              ListPolicies iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None     console.amazonaws.com      1
+
+SURROUNDING EVENTS (32 events, 10 rows shown, repeats merged):
+                eventTime                 eventName                        eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2017-02-13 03:06:02+00:00         DescribeInstances                  ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      3
+2017-02-13 03:11:58+00:00 DescribeAvailabilityZones                  ec2.amazonaws.com   178.188.9.103        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:11:58+00:00    DescribeInstanceStatus                  ec2.amazonaws.com   178.188.9.103        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:11:58+00:00 DescribeAvailabilityZones                  ec2.amazonaws.com   178.188.9.103        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:11:58+00:00         DescribeSnapshots                  ec2.amazonaws.com   178.188.9.103        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:16:35+00:00     DescribeLoadBalancers elasticloadbalancing.amazonaws.com    196.6.57.238        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:16:35+00:00      DescribeVolumeStatus                  ec2.amazonaws.com    196.6.57.238        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:16:35+00:00           DescribeVolumes                  ec2.amazonaws.com    196.6.57.238        arn:aws:iam::123456789012:root                         None                console.ec2.amazonaws.com      1
+2017-02-13 03:17:02+00:00         DescribeInstances                  ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      1
+2017-02-13 03:17:05+00:00         DescribeInstances                  ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-4                         None aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      1
+
+########## G21 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-07-11 02:00:00+00:00 | identity type=Root | flagged events=53
+HISTORY: this identity was first seen 2017-02-12 and was active on 37 earlier days; it used this IP on 36 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x58, CLI/SDK script x1, AWS internal service x3, other x1
+CONTEXT WINDOW: 2017-07-11 01:00:00+00:00 to 2017-07-11 04:00:00+00:00 | related events=64
+TOP EVENTS IN WINDOW: ListRolePolicies x5, ListInstanceProfilesForRole x5, ListBuckets x4, GetBucketPolicy x3, GetBucketTagging x3, GetBucketReplication x3, GetBucketCors x3, GetBucketLifecycle x3, GetBucketWebsite x3, ListRoles x3
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: AWS Internal x1
+ERRORS: NoSuchTagSet x3, ReplicationConfigurationNotFoundError x3, NoSuchCORSConfiguration x3, NoSuchLifecycleConfiguration x3, NoSuchWebsiteConfiguration x3
+
+INCIDENT-HOUR EVENTS (63 events, 20 rows shown, repeats merged):
+                eventTime                           eventName              eventSource sourceIPAddress                userIdentityarn                             errorCode                                userAgent  count
+2017-07-11 02:32:32+00:00                        ConsoleLogin     signin.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None Mozilla/5.0 (Windows NT 6.3; Win64; x64)      1
+2017-07-11 02:32:32+00:00                     GetSessionToken        sts.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                     signin.amazonaws.com      1
+2017-07-11 02:32:34+00:00                         ListBuckets         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None          [S3Console/0.4, aws-internal/3]      2
+2017-07-11 02:32:45+00:00                     GetBucketPolicy         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                    GetBucketTagging         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                          NoSuchTagSet          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                    GetBucketLogging         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                GetBucketReplication         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root ReplicationConfigurationNotFoundError          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                 GetBucketVersioning         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                        GetBucketAcl         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:32:45+00:00                       GetBucketCors         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               NoSuchCORSConfiguration          [S3Console/0.4, aws-internal/3]      1
+2017-07-11 02:35:53+00:00                        ListPolicies        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:35:58+00:00            GetAccountPasswordPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                 NoSuchEntityException                    console.amazonaws.com      1
+2017-07-11 02:35:58+00:00                   GetAccountSummary        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:35:58+00:00                      ListMFADevices        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:35:58+00:00                  ListAccountAliases        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:35:58+00:00                      ListAccessKeys        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:36:07+00:00                      DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+2017-07-11 02:36:08+00:00 DescribeConfigurationRecorderStatus     config.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None            AWSCloudTrail, aws-internal/3      1
+2017-07-11 02:36:08+00:00      DescribeConfigurationRecorders     config.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None            AWSCloudTrail, aws-internal/3      1
+2017-07-11 02:36:08+00:00                        LookupEvents cloudtrail.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                                  None                    console.amazonaws.com      1
+
+SURROUNDING EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime   eventName      eventSource sourceIPAddress                userIdentityarn errorCode                       userAgent  count
+2017-07-11 02:36:07+00:00 ListBuckets s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root      None [AWSCloudTrail, aws-internal/3]      1
+
+########## G22 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-02-20 02:00:00+00:00 | identity type=Root | flagged events=3
+HISTORY: this identity was first seen 2017-02-12 and was active on 5 earlier days; it used this IP on 5 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x3, CLI/SDK script x0, AWS internal service x0, other x0
+CONTEXT WINDOW: 2017-02-20 01:00:00+00:00 to 2017-02-20 04:00:00+00:00 | related events=378
+TOP EVENTS IN WINDOW: GetPolicyVersion x30, GetStages x30, ListPolicies x26, GetPolicy202224v2 x25, ListAccessKeys x18, GetPolicy x18, ListMFADevices x16, GetAccountSummary x16, ListAccountAliases x16, GetAccountPasswordPolicy x15
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-1 x28
+OTHER IPs USED BY THIS IDENTITY: AWS Internal x1
+ERRORS: NoSuchEntityException x17, NotFoundException x10, AccessDenied x2
+
+INCIDENT-HOUR EVENTS (3 events, 3 rows shown, repeats merged):
+                eventTime          eventName       eventSource sourceIPAddress                userIdentityarn errorCode             userAgent  count
+2017-02-20 02:07:38+00:00 ListPolicyVersions iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None console.amazonaws.com      1
+2017-02-20 02:07:38+00:00   GetPolicyVersion iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None console.amazonaws.com      1
+2017-02-20 02:07:38+00:00          GetPolicy iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root      None console.amazonaws.com      1
+
+SURROUNDING EVENTS (375 events, 10 rows shown, repeats merged):
+                eventTime           eventName              eventSource sourceIPAddress                       userIdentityarn    errorCode                                userAgent  count
+2017-02-20 01:12:35+00:00        GetResources apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-1 AccessDenied aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      1
+2017-02-20 01:13:00+00:00      ListAccessKeys        iam.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                    console.amazonaws.com      1
+2017-02-20 01:13:00+00:00      ListMFADevices        iam.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                    console.amazonaws.com      1
+2017-02-20 01:13:00+00:00   GetAccountSummary        iam.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                    console.amazonaws.com      1
+2017-02-20 01:13:00+00:00  ListAccountAliases        iam.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                    console.amazonaws.com      1
+2017-02-20 02:07:55+00:00 ListFunctions202224     lambda.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-1         None aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      1
+2017-02-20 02:09:14+00:00   GetPolicy202224v2     lambda.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:user/name-1         None aws-cli/1.11.47 Python/2.7.3 Linux/3.2.0      1
+2017-02-20 03:32:51+00:00 GetBucketVersioning         s3.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                          [S3Console/0.4]      1
+2017-02-20 03:32:52+00:00   GetBucketLocation         s3.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                          [S3Console/0.4]      2
+2017-02-20 03:32:52+00:00 GetBucketVersioning         s3.amazonaws.com 255.253.125.115        arn:aws:iam::123456789012:root         None                          [S3Console/0.4]      1
+
+########## G23 | label: benign_owner_activity ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=255.253.125.115 | hour=2017-02-19 20:00:00+00:00 | identity type=Root | flagged events=916
+HISTORY: this identity was first seen 2017-02-12 and was active on 4 earlier days; it used this IP on 4 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x646, CLI/SDK script x0, AWS internal service x0, other x347
+CONTEXT WINDOW: 2017-02-19 19:00:00+00:00 to 2017-02-19 22:00:00+00:00 | related events=1194
+TOP EVENTS IN WINDOW: GetPolicy202224v2 x186, GetStages x179, GetRestApi x59, GetResources x54, ListEventSourceMappings202224 x42, GetAccountSettings08306 x41, GetMethod x35, GetClientCertificates x35, GetRestApis x32, GetUsagePlans x31
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: AWS Internal x2
+ERRORS: ResourceNotFoundException x39, NotFoundException x36, NoSuchEntityException x9, InvalidParameterValueException x6, NoSuchTagSet x1
+
+INCIDENT-HOUR EVENTS (993 events, 20 rows shown, repeats merged):
+                eventTime                   eventName              eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2017-02-19 20:03:32+00:00                   ListUsers        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:03:38+00:00              ListAccessKeys        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:03:38+00:00              ListMFADevices        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:03:38+00:00           GetAccountSummary        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:03:38+00:00    GetAccountPasswordPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-02-19 20:03:38+00:00          ListAccountAliases        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:03:56+00:00                  ListGroups        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:04:00+00:00                ListPolicies        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:04:19+00:00                  CreateUser        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:04:19+00:00                   ListUsers        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:59:52+00:00    ListAttachedRolePolicies        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:59:52+00:00 ListInstanceProfilesForRole        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:59:55+00:00                   GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      2
+2017-02-19 20:59:56+00:00               GetDeployment apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:57+00:00                   GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00              GetDeployments apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00    GetDocumentationVersions apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00                 GetSdkTypes apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00                   GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00       GetClientCertificates apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+
+SURROUNDING EVENTS (201 events, 10 rows shown, repeats merged):
+                eventTime                eventName              eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2017-02-19 19:47:54+00:00      GetBucketVersioning         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                          [S3Console/0.4]      1
+2017-02-19 19:47:59+00:00 GetAccountPasswordPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-02-19 19:47:59+00:00           ListMFADevices        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 19:47:59+00:00           ListAccessKeys        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 19:47:59+00:00           ListMFADevices        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 21:04:22+00:00           GetAuthorizers apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 21:04:23+00:00    GetDocumentationParts apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 21:04:23+00:00                GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      5
+2017-02-19 21:04:32+00:00            GetDeployment apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 21:04:33+00:00                GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+
+########## G24 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-9/session-13 | ip=250.251.253.3 | hour=2018-08-06 17:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x2, AWS internal service x0, other x0
+CONTEXT WINDOW: 2018-08-06 16:00:00+00:00 to 2018-08-06 19:00:00+00:00 | related events=80
+TOP EVENTS IN WINDOW: AssumeRole x22, GetRestApis x15, GetLoadBalancers x13, GetInstances x8, DescribeRegions x5, GetUser x5, GetStages x3, GetDeployments x3, GetResources x3, GetAuthorizers x1
+OTHER IDENTITIES USING THIS IP: arn:aws:sts::123456789012:assumed-role/role-9/session-12 x30, None x22, arn:aws:sts::123456789012:assumed-role/role-9/session-21 x10, arn:aws:sts::123456789012:assumed-role/role-9/session-30 x5, arn:aws:sts::123456789012:assumed-role/role-9/session-15 x2
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x5
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime       eventName       eventSource sourceIPAddress                                          userIdentityarn             errorCode                                userAgent  count
+2018-08-06 17:29:59+00:00         GetUser iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-13 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:29:59+00:00 DescribeRegions ec2.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-13                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+
+SURROUNDING EVENTS (78 events, 10 rows shown, repeats merged):
+                eventTime       eventName              eventSource sourceIPAddress                                          userIdentityarn             errorCode                                userAgent  count
+2018-08-06 16:06:06+00:00      AssumeRole        sts.amazonaws.com   250.251.253.3                                                     None                  None aws-sdk-go/1.4.14 (go1.9.2; darwin; amd6      1
+2018-08-06 16:06:07+00:00 DescribeRegions        ec2.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-15                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 16:06:07+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-15 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 16:06:25+00:00      AssumeRole        sts.amazonaws.com   250.251.253.3                                                     None                  None aws-sdk-go/1.4.14 (go1.9.2; darwin; amd6      1
+2018-08-06 16:06:25+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-21 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:32+00:00 DescribeRegions        ec2.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:32+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00    GetResources apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00  GetDeployments apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00       GetStages apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+
+########## G25 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-1/session-1 | ip=cloudtrail.amazonaws.com | hour=2019-02-11 16:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x15, other x0
+CONTEXT WINDOW: 2019-02-11 15:00:00+00:00 to 2019-02-11 18:00:00+00:00 | related events=20
+TOP EVENTS IN WINDOW: CreateTrail x9, DescribeOrganization x5, AssumeRole x5, StartLogging x1
+OTHER IDENTITIES USING THIS IP: None x5
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: ThrottlingException x5, InternalFailure x2, TrailAlreadyExistsException x1
+
+INCIDENT-HOUR EVENTS (15 events, 9 rows shown, repeats merged):
+                eventTime            eventName                 eventSource          sourceIPAddress                                         userIdentityarn                   errorCode                userAgent  count
+2019-02-11 16:43:33+00:00 DescribeOrganization organizations.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1                        None cloudtrail.amazonaws.com      4
+2019-02-11 16:43:34+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1                        None cloudtrail.amazonaws.com      1
+2019-02-11 16:43:34+00:00         StartLogging    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1                        None cloudtrail.amazonaws.com      1
+2019-02-11 16:43:35+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1             InternalFailure cloudtrail.amazonaws.com      1
+2019-02-11 16:43:35+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1         ThrottlingException cloudtrail.amazonaws.com      2
+2019-02-11 16:43:35+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1             InternalFailure cloudtrail.amazonaws.com      1
+2019-02-11 16:43:36+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1         ThrottlingException cloudtrail.amazonaws.com      3
+2019-02-11 16:43:38+00:00          CreateTrail    cloudtrail.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1 TrailAlreadyExistsException cloudtrail.amazonaws.com      1
+2019-02-11 16:43:38+00:00 DescribeOrganization organizations.amazonaws.com cloudtrail.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-1/session-1                        None cloudtrail.amazonaws.com      1
+
+SURROUNDING EVENTS (5 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource          sourceIPAddress userIdentityarn errorCode                userAgent  count
+2019-02-11 16:43:33+00:00 AssumeRole sts.amazonaws.com cloudtrail.amazonaws.com            None      None cloudtrail.amazonaws.com      5
+
+########## G26 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-6/session-6 | ip=252.138.62.6 | hour=2017-05-26 18:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x540, AWS internal service x0, other x0
+CONTEXT WINDOW: 2017-05-26 17:00:00+00:00 to 2017-05-26 20:00:00+00:00 | related events=571
+TOP EVENTS IN WINDOW: ListKeys x28, DescribeConfigurationRecorders x28, DescribeLoadBalancers x28, DescribeInstances x28, DescribeImages x28, DescribeAddresses x28, DescribeFlowLogs x28, DescribeAccountAttributes x28, DescribeMetricFilters x28, DescribeTrails x28
+OTHER IDENTITIES USING THIS IP: None x3
+OTHER IPs USED BY THIS IDENTITY: ec2-frontend-api.amazonaws.com x28
+ERRORS: NoSuchEntityException x2
+
+INCIDENT-HOUR EVENTS (540 events, 20 rows shown, repeats merged):
+                eventTime                      eventName                        eventSource sourceIPAddress                                         userIdentityarn             errorCode                                userAgent  count
+2017-05-26 18:27:02+00:00       GetAccountPasswordPolicy                  iam.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6 NoSuchEntityException aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00                       ListKeys                  kms.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00 DescribeConfigurationRecorders               config.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00          DescribeLoadBalancers elasticloadbalancing.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00              DescribeInstances                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00                 DescribeImages                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00              DescribeAddresses                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00      DescribeAccountAttributes                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00          DescribeMetricFilters                 logs.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:27:02+00:00                 DescribeTrails           cloudtrail.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:30:39+00:00                DescribeSubnets                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      2
+2017-05-26 18:30:39+00:00               GetBucketLogging                   s3.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None [aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec      1
+2017-05-26 18:30:39+00:00       ListAttachedUserPolicies                  iam.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      2
+2017-05-26 18:30:40+00:00                DescribeSubnets                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      8
+2017-05-26 18:30:40+00:00                   GetBucketAcl                   s3.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None [aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec      2
+2017-05-26 18:30:40+00:00            GetBucketVersioning                   s3.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None [aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec      1
+2017-05-26 18:30:40+00:00                   GetBucketAcl                   s3.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None [aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec      6
+2017-05-26 18:30:40+00:00                DescribeSubnets                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:30:40+00:00                   GetBucketAcl                   s3.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None [aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec      1
+2017-05-26 18:30:41+00:00                DescribeSubnets                  ec2.amazonaws.com    252.138.62.6 arn:aws:sts::123456789012:assumed-role/role-6/session-6                  None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+
+SURROUNDING EVENTS (31 events, 4 rows shown, repeats merged):
+                eventTime        eventName       eventSource                sourceIPAddress                                         userIdentityarn errorCode                                userAgent  count
+2017-05-26 18:26:28+00:00       AssumeRole sts.amazonaws.com                   252.138.62.6                                                    None      None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      2
+2017-05-26 18:27:02+00:00 DescribeFlowLogs ec2.amazonaws.com ec2-frontend-api.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-6/session-6      None           ec2-frontend-api.amazonaws.com     14
+2017-05-26 18:30:28+00:00       AssumeRole sts.amazonaws.com                   252.138.62.6                                                    None      None aws-sdk-nodejs/2.7.21 linux/v4.3.2 exec-      1
+2017-05-26 18:30:29+00:00 DescribeFlowLogs ec2.amazonaws.com ec2-frontend-api.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-6/session-6      None           ec2-frontend-api.amazonaws.com     14
+
+########## G27 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-11/session-43 | ip=config.amazonaws.com | hour=2019-07-12 14:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x1, other x0
+CONTEXT WINDOW: 2019-07-12 13:00:00+00:00 to 2019-07-12 16:00:00+00:00 | related events=7
+TOP EVENTS IN WINDOW: AssumeRole x3, PutEvaluations x2, ListDiscoveredResources x1, BatchGetResourceConfig x1
+OTHER IDENTITIES USING THIS IP: None x3, arn:aws:sts::123456789012:assumed-role/role-11/session-45 x3
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: InvalidResultTokenException x1
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime      eventName          eventSource      sourceIPAddress                                           userIdentityarn                   errorCode            userAgent  count
+2019-07-12 14:58:44+00:00 PutEvaluations config.amazonaws.com config.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-11/session-43 InvalidResultTokenException config.amazonaws.com      1
+
+SURROUNDING EVENTS (6 events, 5 rows shown, repeats merged):
+                eventTime               eventName          eventSource      sourceIPAddress                                           userIdentityarn errorCode            userAgent  count
+2019-07-12 14:58:43+00:00              AssumeRole    sts.amazonaws.com config.amazonaws.com                                                      None      None config.amazonaws.com      2
+2019-07-12 14:59:12+00:00 ListDiscoveredResources config.amazonaws.com config.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-11/session-45      None config.amazonaws.com      1
+2019-07-12 14:59:12+00:00              AssumeRole    sts.amazonaws.com config.amazonaws.com                                                      None      None config.amazonaws.com      1
+2019-07-12 14:59:12+00:00          PutEvaluations config.amazonaws.com config.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-11/session-45      None config.amazonaws.com      1
+2019-07-12 14:59:12+00:00  BatchGetResourceConfig config.amazonaws.com config.amazonaws.com arn:aws:sts::123456789012:assumed-role/role-11/session-45      None config.amazonaws.com      1
+
+########## G28 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-8/session-9 | ip=255.253.125.115 | hour=2017-05-26 23:00:00+00:00 | identity type=AssumedRole | flagged events=14
+HISTORY: this identity was first seen 2017-05-26 and was active on 1 earlier days; it used this IP on 1 earlier days (first 2017-05-26).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1213, AWS internal service x0, other x0
+CONTEXT WINDOW: 2017-05-26 22:00:00+00:00 to 2017-05-27 01:00:00+00:00 | related events=6704
+TOP EVENTS IN WINDOW: AssumeRole x1478, GetPolicyVersion x970, ListEntitiesForPolicy x879, GetTrailStatus x163, DescribeTrails x163, ListCertificates x151, DescribeTags x106, DescribeLoadBalancers x101, DescribeInstances x96, DescribeDhcpOptions x84
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-3 x1478, arn:aws:sts::123456789012:assumed-role/role-8/session-8 x1030, arn:aws:iam::123456789012:root x102, arn:aws:iam::123456789012:user/name-2 x82
+OTHER IPs USED BY THIS IDENTITY: ec2-frontend-api.amazonaws.com x88
+ERRORS: AccessDenied x107, ReplicationConfigurationNotFoundError x72, NoSuchTagSet x72, NoSuchCORSConfiguration x72, NoSuchLifecycleConfiguration x72
+
+INCIDENT-HOUR EVENTS (1213 events, 20 rows shown, repeats merged):
+                eventTime        eventName              eventSource sourceIPAddress                                         userIdentityarn errorCode                                userAgent  count
+2017-05-26 23:00:00+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     11
+2017-05-26 23:00:01+00:00 ListCertificates        acm.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:00:01+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     13
+2017-05-26 23:00:02+00:00 ListCertificates        acm.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:00:02+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     20
+2017-05-26 23:00:04+00:00 ListCertificates        acm.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:00:04+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     10
+2017-05-26 23:00:05+00:00 ListCertificates        acm.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:00:05+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     15
+2017-05-26 23:00:06+00:00 ListCertificates        acm.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:56+00:00   GetTrailStatus cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:56+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      6
+2017-05-26 23:59:57+00:00   DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:57+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     11
+2017-05-26 23:59:58+00:00   GetTrailStatus cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:58+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78     13
+2017-05-26 23:59:59+00:00   DescribeTrails cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:59+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:59+00:00   GetTrailStatus cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-26 23:59:59+00:00 GetPolicyVersion        iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      9
+
+SURROUNDING EVENTS (5491 events, 10 rows shown, repeats merged):
+                eventTime              eventName                        eventSource sourceIPAddress                                         userIdentityarn errorCode                                userAgent  count
+2017-05-26 22:13:02+00:00  DescribeLoadBalancers elasticloadbalancing.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-2      None aws-sdk-java/1.11.60 Linux/4.4.0-78-gene      1
+2017-05-26 22:13:02+00:00              ListUsers                  iam.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-2      None aws-sdk-java/1.11.60 Linux/4.4.0-78-gene      1
+2017-05-26 22:13:02+00:00       DescribePolicies          autoscaling.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-2      None aws-sdk-java/1.11.60 Linux/4.4.0-78-gene      1
+2017-05-26 22:13:02+00:00            ListBuckets                   s3.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-2      None [aws-sdk-java/1.11.60 Linux/4.4.0-78-gen      1
+2017-05-26 22:13:02+00:00 DescribeSecurityGroups                  ec2.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-2      None aws-sdk-java/1.11.60 Linux/4.4.0-78-gene      1
+2017-05-27 00:59:59+00:00         DescribeTrails           cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-27 00:59:59+00:00       GetPolicyVersion                  iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-27 00:59:59+00:00             AssumeRole                  sts.amazonaws.com 255.253.125.115                   arn:aws:iam::123456789012:user/name-3      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-27 00:59:59+00:00         GetTrailStatus           cloudtrail.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      1
+2017-05-27 00:59:59+00:00       GetPolicyVersion                  iam.amazonaws.com 255.253.125.115 arn:aws:sts::123456789012:assumed-role/role-8/session-9      None Boto3/1.4.4 Python/2.7.12 Linux/4.4.0-78      7
+
+########## G29 | label: benign_audit_tooling ##########
+INCIDENT: identity=arn:aws:sts::123456789012:assumed-role/role-9/session-25 | ip=250.251.253.3 | hour=2018-08-06 17:00:00+00:00 | identity type=AssumedRole | flagged events=1
+HISTORY: this identity has NOT been seen before (first appearance); it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x1, AWS internal service x0, other x0
+CONTEXT WINDOW: 2018-08-06 16:00:00+00:00 to 2018-08-06 19:00:00+00:00 | related events=80
+TOP EVENTS IN WINDOW: AssumeRole x22, GetRestApis x15, GetLoadBalancers x13, GetInstances x8, DescribeRegions x5, GetUser x5, GetStages x3, GetDeployments x3, GetResources x3, GetAuthorizers x1
+OTHER IDENTITIES USING THIS IP: arn:aws:sts::123456789012:assumed-role/role-9/session-12 x30, None x22, arn:aws:sts::123456789012:assumed-role/role-9/session-21 x10, arn:aws:sts::123456789012:assumed-role/role-9/session-30 x5, arn:aws:sts::123456789012:assumed-role/role-9/session-15 x2
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x5
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime      eventName              eventSource sourceIPAddress                                          userIdentityarn errorCode                                userAgent  count
+2018-08-06 17:26:49+00:00 GetDeployments apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-25      None aws-cli/1.14.66 Python/2.7.10 Darwin/17.      1
+
+SURROUNDING EVENTS (79 events, 10 rows shown, repeats merged):
+                eventTime       eventName              eventSource sourceIPAddress                                          userIdentityarn             errorCode                                userAgent  count
+2018-08-06 16:06:06+00:00      AssumeRole        sts.amazonaws.com   250.251.253.3                                                     None                  None aws-sdk-go/1.4.14 (go1.9.2; darwin; amd6      1
+2018-08-06 16:06:07+00:00 DescribeRegions        ec2.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-15                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 16:06:07+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-15 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 16:06:25+00:00      AssumeRole        sts.amazonaws.com   250.251.253.3                                                     None                  None aws-sdk-go/1.4.14 (go1.9.2; darwin; amd6      1
+2018-08-06 16:06:25+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-21 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:32+00:00 DescribeRegions        ec2.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:32+00:00         GetUser        iam.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30 NoSuchEntityException Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00    GetResources apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00  GetDeployments apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+2018-08-06 17:30:33+00:00       GetStages apigateway.amazonaws.com   250.251.253.3 arn:aws:sts::123456789012:assumed-role/role-9/session-30                  None Boto3/1.5.32 Python/3.6.4 Darwin/17.7.0       1
+
+########## G30 | label: benign_service ##########
+INCIDENT: identity=None | ip=254.237.83.124 | hour=2019-04-13 12:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 759 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-13 11:00:00+00:00 to 2019-04-13 14:00:00+00:00 | related events=6
+TOP EVENTS IN WINDOW: AssumeRole x6
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 229.111.255.50 x1, 255.8.172.8 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-13 12:28:38+00:00 AssumeRole sts.amazonaws.com  254.237.83.124            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (5 events, 5 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode                                userAgent  count
+2019-04-13 11:27:07+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      1
+2019-04-13 12:16:43+00:00 AssumeRole sts.amazonaws.com  229.111.255.50            None      None aws-internal/3 aws-sdk-java/1.11.526 Lin      1
+2019-04-13 12:27:08+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      1
+2019-04-13 12:28:38+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None                             Coral/Netty4      1
+2019-04-13 13:27:08+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      1
+
+########## G31 | label: benign_service ##########
+INCIDENT: identity=None | ip=182.6.186.222 | hour=2019-04-06 05:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 752 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-06 04:00:00+00:00 to 2019-04-06 07:00:00+00:00 | related events=6
+TOP EVENTS IN WINDOW: AssumeRole x6
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 255.8.172.8 x1, 252.252.254.0 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-06 05:49:13+00:00 AssumeRole sts.amazonaws.com   182.6.186.222            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (5 events, 4 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode                                userAgent  count
+2019-04-06 04:26:54+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      2
+2019-04-06 05:49:13+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None                             Coral/Netty4      1
+2019-04-06 06:20:11+00:00 AssumeRole sts.amazonaws.com   252.252.254.0            None      None aws-internal/3 aws-sdk-java/1.11.526 Lin      1
+2019-04-06 06:26:54+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      1
+
+########## G32 | label: benign_service ##########
+INCIDENT: identity=None | ip=211.126.227.6 | hour=2019-04-06 12:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 752 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-06 11:00:00+00:00 to 2019-04-06 14:00:00+00:00 | related events=7
+TOP EVENTS IN WINDOW: AssumeRole x7
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 255.8.172.8 x1, 1.240.194.6 x1, 255.254.168.255 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-06 12:10:18+00:00 AssumeRole sts.amazonaws.com   211.126.227.6            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (6 events, 5 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode                                userAgent  count
+2019-04-06 11:26:55+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      1
+2019-04-06 12:10:18+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None                             Coral/Netty4      1
+2019-04-06 12:15:54+00:00 AssumeRole sts.amazonaws.com     1.240.194.6            None      None aws-internal/3 aws-sdk-java/1.11.526 Lin      1
+2019-04-06 12:26:54+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None                             Coral/Netty4      2
+2019-04-06 13:40:22+00:00 AssumeRole sts.amazonaws.com 255.254.168.255            None      None                             Coral/Netty4      1
+
+########## G33 | label: benign_service ##########
+INCIDENT: identity=None | ip=251.200.252.240 | hour=2019-04-12 21:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 758 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-12 20:00:00+00:00 to 2019-04-12 23:00:00+00:00 | related events=6
+TOP EVENTS IN WINDOW: AssumeRole x6
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 240.251.212.133 x1, 255.8.172.8 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-12 21:49:19+00:00 AssumeRole sts.amazonaws.com 251.200.252.240            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (5 events, 4 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-12 20:27:06+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      1
+2019-04-12 20:40:43+00:00 AssumeRole sts.amazonaws.com 240.251.212.133            None      None Coral/Netty4      1
+2019-04-12 20:40:43+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None Coral/Netty4      1
+2019-04-12 21:27:07+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      2
+
+########## G34 | label: benign_service ##########
+INCIDENT: identity=None | ip=37.1.252.213 | hour=2019-04-12 09:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 758 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-12 08:00:00+00:00 to 2019-04-12 11:00:00+00:00 | related events=5
+TOP EVENTS IN WINDOW: AssumeRole x5
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 255.8.172.8 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-12 09:26:41+00:00 AssumeRole sts.amazonaws.com    37.1.252.213            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (4 events, 3 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-12 08:27:06+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      1
+2019-04-12 09:26:41+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None Coral/Netty4      1
+2019-04-12 09:27:06+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      2
+
+########## G35 | label: benign_service ##########
+INCIDENT: identity=None | ip=33.156.253.155 | hour=2019-04-18 04:00:00+00:00 | identity type=AWSService | flagged events=1
+HISTORY: this identity was first seen 2017-02-23 and was active on 764 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x0, other x1
+CONTEXT WINDOW: 2019-04-18 03:00:00+00:00 to 2019-04-18 06:00:00+00:00 | related events=5
+TOP EVENTS IN WINDOW: AssumeRole x5
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 220.93.5.80 x3, 255.8.172.8 x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (1 events, 1 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-18 04:59:38+00:00 AssumeRole sts.amazonaws.com  33.156.253.155            None      None Coral/Netty4      1
+
+SURROUNDING EVENTS (4 events, 3 rows shown, repeats merged):
+                eventTime  eventName       eventSource sourceIPAddress userIdentityarn errorCode    userAgent  count
+2019-04-18 03:27:15+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      2
+2019-04-18 04:59:37+00:00 AssumeRole sts.amazonaws.com     255.8.172.8            None      None Coral/Netty4      1
+2019-04-18 05:27:15+00:00 AssumeRole sts.amazonaws.com     220.93.5.80            None      None Coral/Netty4      1
+
+########## G36 | label: shared_cred_success ##########
+INCIDENT: identity=arn:aws:iam::123456789012:user/name-4 | ip=5.205.62.253 | hour=2019-08-22 07:00:00+00:00 | identity type=IAMUser | flagged events=60
+HISTORY: this identity was first seen 2017-02-12 and was active on 818 earlier days; it used this IP on 2 earlier days (first 2019-08-21).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x9850, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-08-22 06:00:00+00:00 to 2019-08-22 09:00:00+00:00 | related events=38954
+TOP EVENTS IN WINDOW: RunInstances x38403, GetCallerIdentity x117, DescribeInstances x117, CreateKeyPair x106, CreateDefaultVpc x105, DescribeKeyPairs x105, ListBuckets x1
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x20594
+OTHER IPs USED BY THIS IDENTITY: 235.148.254.214 x1
+ERRORS: Client.RequestLimitExceeded x27280, Client.UnauthorizedOperation x7254, Client.Unsupported x2362, Client.InstanceLimitExceeded x895, Server.InsufficientInstanceCapacity x686
+
+INCIDENT-HOUR EVENTS (9850 events, 20 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-22 07:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 07:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:01+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:02+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 07:00:05+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:05+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 07:00:07+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:10+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:11+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 07:59:57+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.InstanceLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:57+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:57+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.InstanceLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.InstanceLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+SURROUNDING EVENTS (29104 events, 10 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:01+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:02+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+########## G37 | label: shared_cred_success ##########
+INCIDENT: identity=arn:aws:iam::123456789012:user/name-2 | ip=5.205.62.253 | hour=2019-08-22 11:00:00+00:00 | identity type=IAMUser | flagged events=21
+HISTORY: this identity was first seen 2017-02-26 and was active on 561 earlier days; it used this IP on 2 earlier days (first 2019-08-21).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x9431, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-08-22 10:00:00+00:00 to 2019-08-22 13:00:00+00:00 | related events=45328
+TOP EVENTS IN WINDOW: RunInstances x44756, GetCallerIdentity x119, DescribeInstances x119, CreateDefaultVpc x112, DescribeKeyPairs x111, CreateKeyPair x111
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x20978
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: Client.RequestLimitExceeded x29956, Client.UnauthorizedOperation x8945, Client.Unsupported x3068, Server.InsufficientInstanceCapacity x1704, Client.InstanceLimitExceeded x1113
+
+INCIDENT-HOUR EVENTS (9431 events, 20 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                           errorCode                                userAgent  count
+2019-08-22 11:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2        Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 11:00:01+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                  Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:00:02+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 11:00:03+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                  Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:00:04+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-     11
+2019-08-22 11:00:08+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2        Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 11:00:09+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      7
+2019-08-22 11:00:12+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                  Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:00:13+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      6
+2019-08-22 11:59:44+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Server.InsufficientInstanceCapacity Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:59:44+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      6
+2019-08-22 11:59:48+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2        Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:59:48+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      7
+2019-08-22 11:59:52+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2        Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 11:59:52+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      4
+2019-08-22 11:59:54+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Server.InsufficientInstanceCapacity Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:59:55+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2         Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      8
+2019-08-22 11:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                  Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 11:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Server.InsufficientInstanceCapacity Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+SURROUNDING EVENTS (35897 events, 10 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-22 10:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 10:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 10:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 10:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.InstanceLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 10:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 12:59:57+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 12:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 12:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 12:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 12:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+########## G38 | label: shared_cred_success ##########
+INCIDENT: identity=arn:aws:iam::123456789012:user/name-4 | ip=5.205.62.253 | hour=2019-08-21 07:00:00+00:00 | identity type=IAMUser | flagged events=1
+HISTORY: this identity was first seen 2017-02-12 and was active on 816 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x3966, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-08-21 06:00:00+00:00 to 2019-08-21 09:00:00+00:00 | related events=23543
+TOP EVENTS IN WINDOW: RunInstances x23059, CreateDefaultVpc x98, GetCallerIdentity x97, DescribeInstances x94, DescribeKeyPairs x90, CreateKeyPair x90, CreateAccessKey x3, GetSessionToken x2, ListAccessKeys x2, CreateUser x2
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-2 x11908
+OTHER IPs USED BY THIS IDENTITY: 251.209.251.231 x3
+ERRORS: Client.RequestLimitExceeded x14340, Client.UnauthorizedOperation x6205, Client.Unsupported x1397, Server.InsufficientInstanceCapacity x685, Client.InstanceLimitExceeded x620
+
+INCIDENT-HOUR EVENTS (3966 events, 20 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-21 07:41:24+00:00 GetCallerIdentity sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:25+00:00   GetSessionToken sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:26+00:00   DeleteAccessKey iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:26+00:00    ListAccessKeys iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:26+00:00        CreateUser iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:27+00:00   CreateAccessKey iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:29+00:00 GetCallerIdentity sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-21 07:41:30+00:00  DescribeKeyPairs ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:30+00:00 GetCallerIdentity sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:30+00:00  DescribeKeyPairs ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:56+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-21 07:59:57+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:57+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:58+00:00 DescribeInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:58+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:58+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:59+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:59:59+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-21 07:59:59+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-21 07:59:59+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+SURROUNDING EVENTS (19577 events, 10 rows shown, repeats merged):
+                eventTime         eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-21 07:41:17+00:00 GetCallerIdentity sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:19+00:00   GetSessionToken sts.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:21+00:00    ListAccessKeys iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                         None Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:21+00:00   CreateAccessKey iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 07:41:22+00:00        CreateUser iam.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2                 AccessDenied Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 08:57:34+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      4
+2019-08-21 08:57:48+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 08:57:49+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 08:57:50+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-21 08:57:52+00:00      RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+########## G39 | label: shared_cred_success ##########
+INCIDENT: identity=arn:aws:iam::123456789012:user/name-2 | ip=5.205.62.253 | hour=2019-08-22 07:00:00+00:00 | identity type=IAMUser | flagged events=20
+HISTORY: this identity was first seen 2017-02-26 and was active on 561 earlier days; it used this IP on 2 earlier days (first 2019-08-21).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x9718, AWS internal service x0, other x0
+CONTEXT WINDOW: 2019-08-22 06:00:00+00:00 to 2019-08-22 09:00:00+00:00 | related events=39062
+TOP EVENTS IN WINDOW: RunInstances x38403, GetCallerIdentity x117, DescribeInstances x117, CreateKeyPair x106, CreateDefaultVpc x105, DescribeKeyPairs x105, GetPolicy202224v2 x17, ListRoles x12, ListFunctions202224 x8, GetStages x6
+OTHER IDENTITIES USING THIS IP: arn:aws:iam::123456789012:user/name-4 x18359
+OTHER IPs USED BY THIS IDENTITY: 235.148.254.214 x109
+ERRORS: Client.RequestLimitExceeded x27280, Client.UnauthorizedOperation x7254, Client.Unsupported x2362, Client.InstanceLimitExceeded x895, Server.InsufficientInstanceCapacity x686
+
+INCIDENT-HOUR EVENTS (9718 events, 20 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-22 07:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:01+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      8
+2019-08-22 07:00:04+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:05+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      5
+2019-08-22 07:00:07+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:07+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:08+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:00:09+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      4
+2019-08-22 07:00:12+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:50+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 07:59:50+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:51+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      4
+2019-08-22 07:59:51+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:52+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 07:59:54+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.InstanceLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:55+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      3
+2019-08-22 07:59:56+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 07:59:57+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      5
+2019-08-22 07:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+SURROUNDING EVENTS (29344 events, 10 rows shown, repeats merged):
+                eventTime    eventName       eventSource sourceIPAddress                       userIdentityarn                    errorCode                                userAgent  count
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:00+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:01+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 06:00:02+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:58+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2           Client.Unsupported Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-2 Client.UnauthorizedOperation Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      2
+2019-08-22 08:59:59+00:00 RunInstances ec2.amazonaws.com    5.205.62.253 arn:aws:iam::123456789012:user/name-4  Client.RequestLimitExceeded Boto3/1.9.201 Python/2.7.12 Linux/4.4.0-      1
+
+########## G40 | label: unlabelled ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=AWS Internal | hour=2017-02-19 19:00:00+00:00 | identity type=Root | flagged events=1
+HISTORY: this identity was first seen 2017-02-12 and was active on 4 earlier days; it used this IP on 2 earlier days (first 2017-02-12).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x2, other x0
+CONTEXT WINDOW: 2017-02-19 18:00:00+00:00 to 2017-02-19 21:00:00+00:00 | related events=1064
+TOP EVENTS IN WINDOW: GetPolicy202224v2 x186, GetStages x122, GetRestApi x53, GetResources x51, ListEventSourceMappings202224 x42, GetAccountSettings08306 x41, GetMethod x35, GetUsagePlans x28, GetRestApis x26, GetModels x24
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 255.253.125.115 x1062
+ERRORS: ResourceNotFoundException x39, NotFoundException x36, NoSuchEntityException x10, InvalidParameterValueException x6, NoSuchTagSet x1
+
+INCIDENT-HOUR EVENTS (2 events, 2 rows shown, repeats merged):
+                eventTime             eventName      eventSource sourceIPAddress                userIdentityarn                             errorCode        userAgent  count
+2017-02-19 19:49:31+00:00 GetBucketNotification s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root                                  None [aws-internal/3]      1
+2017-02-19 19:49:32+00:00  GetBucketReplication s3.amazonaws.com    AWS Internal arn:aws:iam::123456789012:root ReplicationConfigurationNotFoundError [aws-internal/3]      1
+
+SURROUNDING EVENTS (1062 events, 10 rows shown, repeats merged):
+                eventTime                eventName              eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2017-02-19 18:38:23+00:00        GetAccountSummary        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 18:38:23+00:00 GetAccountPasswordPolicy        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2017-02-19 18:38:23+00:00           ListAccessKeys        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 18:38:23+00:00           ListMFADevices        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 18:38:23+00:00       ListAccountAliases        iam.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2017-02-19 20:59:59+00:00    GetClientCertificates apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00 GetDocumentationVersions apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00              GetSdkTypes apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00                GetStages apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+2017-02-19 20:59:59+00:00           GetDeployments apigateway.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root                  None Apache-HttpClient/4.5.x (Java/1.8.0_102)      1
+
+########## G41 | label: unlabelled ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=6.255.9.149 | hour=2017-02-12 23:00:00+00:00 | identity type=Root | flagged events=12
+HISTORY: this identity was first seen 2017-02-12 and was active on 1 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x13, CLI/SDK script x0, AWS internal service x0, other x0
+CONTEXT WINDOW: 2017-02-12 22:00:00+00:00 to 2017-02-13 01:00:00+00:00 | related events=577
+TOP EVENTS IN WINDOW: DescribeVolumes x50, DescribeVolumeStatus x50, DescribeInstances x34, DescribeInstanceStatus x34, DescribeSnapshots x31, DescribeTags x28, GetBucketLocation x26, DescribeAddresses x19, DescribeAvailabilityZones x17, DescribeInstanceAttribute x16
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: 255.253.125.115 x505, 178.188.9.103 x26, AWS Internal x14, 85.50.251.255 x13, 102.243.123.0 x6
+ERRORS: ReplicationConfigurationNotFoundError x7, NoSuchLifecycleConfiguration x7, NoSuchTagSet x7, NoSuchCORSConfiguration x7, NoSuchEntityException x4
+
+INCIDENT-HOUR EVENTS (13 events, 11 rows shown, repeats merged):
+                eventTime                 eventName                        eventSource sourceIPAddress                userIdentityarn errorCode                 userAgent  count
+2017-02-12 23:43:02+00:00      DescribeVolumeStatus                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00 DescribeAvailabilityZones                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00           DescribeVolumes                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00              DescribeTags                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00         DescribeInstances                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00    DescribeInstanceStatus                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00           DescribeVolumes                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      2
+2017-02-12 23:43:02+00:00         DescribeSnapshots                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00     DescribeLoadBalancers elasticloadbalancing.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00 DescribeAvailabilityZones                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      1
+2017-02-12 23:43:02+00:00      DescribeVolumeStatus                  ec2.amazonaws.com     6.255.9.149 arn:aws:iam::123456789012:root      None console.ec2.amazonaws.com      2
+
+SURROUNDING EVENTS (564 events, 10 rows shown, repeats merged):
+                eventTime            eventName              eventSource sourceIPAddress                userIdentityarn          errorCode                 userAgent  count
+2017-02-12 22:16:51+00:00      GetBucketPolicy         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root NoSuchBucketPolicy           [S3Console/0.4]      1
+2017-02-12 22:17:20+00:00          ListBuckets         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None           [S3Console/0.4]      1
+2017-02-12 22:17:22+00:00    GetBucketLocation         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None           [S3Console/0.4]      1
+2017-02-12 22:17:22+00:00  GetBucketVersioning         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None           [S3Console/0.4]      2
+2017-02-12 22:17:24+00:00    GetBucketLocation         s3.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None           [S3Console/0.4]      2
+2017-02-13 00:01:55+00:00    DescribeInstances        ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None console.ec2.amazonaws.com      1
+2017-02-13 00:01:55+00:00      DescribeVolumes        ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None console.ec2.amazonaws.com      1
+2017-02-13 00:01:55+00:00 DescribeVolumeStatus        ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None console.ec2.amazonaws.com      2
+2017-02-13 00:01:55+00:00       DescribeAlarms monitoring.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None     console.amazonaws.com      1
+2017-02-13 00:01:55+00:00 DescribeVolumeStatus        ec2.amazonaws.com 255.253.125.115 arn:aws:iam::123456789012:root               None console.ec2.amazonaws.com      1
+
+########## G42 | label: unlabelled ##########
+INCIDENT: identity=None | ip=ec2.amazonaws.com | hour=2020-08-10 14:00:00+00:00 | identity type=AWSAccount | flagged events=2
+HISTORY: this identity was first seen 2017-02-23 and was active on 1244 earlier days; it used this IP on 1229 earlier days (first 2017-02-23).
+ACCESS METHOD (incident hour): web console x0, CLI/SDK script x0, AWS internal service x4, other x0
+CONTEXT WINDOW: 2020-08-10 13:00:00+00:00 to 2020-08-10 16:00:00+00:00 | related events=9
+TOP EVENTS IN WINDOW: AssumeRole x7, SharedSnapshotVolumeCreated x2
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: config.amazonaws.com x1
+ERRORS: none
+
+INCIDENT-HOUR EVENTS (4 events, 3 rows shown, repeats merged):
+                eventTime                   eventName       eventSource   sourceIPAddress userIdentityarn errorCode         userAgent  count
+2020-08-10 14:50:38+00:00 SharedSnapshotVolumeCreated ec2.amazonaws.com ec2.amazonaws.com            None      None ec2.amazonaws.com      1
+2020-08-10 14:56:03+00:00                  AssumeRole sts.amazonaws.com ec2.amazonaws.com            None      None ec2.amazonaws.com      2
+2020-08-10 14:56:21+00:00 SharedSnapshotVolumeCreated ec2.amazonaws.com ec2.amazonaws.com            None      None ec2.amazonaws.com      1
+
+SURROUNDING EVENTS (5 events, 2 rows shown, repeats merged):
+                eventTime  eventName       eventSource      sourceIPAddress userIdentityarn errorCode            userAgent  count
+2020-08-10 13:44:11+00:00 AssumeRole sts.amazonaws.com config.amazonaws.com            None      None config.amazonaws.com      1
+2020-08-10 13:56:02+00:00 AssumeRole sts.amazonaws.com    ec2.amazonaws.com            None      None    ec2.amazonaws.com      4
+
+########## G43 | label: unlabelled ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=2.7.223.252 | hour=2019-03-03 16:00:00+00:00 | identity type=Root | flagged events=1
+HISTORY: this identity was first seen 2017-02-12 and was active on 63 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x114, CLI/SDK script x0, AWS internal service x1, other x12
+CONTEXT WINDOW: 2019-03-03 15:00:00+00:00 to 2019-03-03 18:00:00+00:00 | related events=127
+TOP EVENTS IN WINDOW: ListMFADevices x9, GetPolicyVersion x9, ListAccessKeys x7, ListAccountAliases x6, ListPolicies x6, ListUsers x6, ListAttachedUserPolicies x6, GetAccountSummary x5, GetAccountPasswordPolicy x5, GetUser x5
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x6, LimitExceededException x1
+
+INCIDENT-HOUR EVENTS (127 events, 20 rows shown, repeats merged):
+                eventTime                eventName          eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2019-03-03 16:27:05+00:00             ConsoleLogin signin.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None Mozilla/5.0 (Macintosh; Intel Mac OS X 1      1
+2019-03-03 16:27:05+00:00          GetSessionToken    sts.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                     signin.amazonaws.com      1
+2019-03-03 16:27:06+00:00           ListMFADevices    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:06+00:00           ListAccessKeys    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:06+00:00        GetAccountSummary    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:06+00:00 GetAccountPasswordPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2019-03-03 16:27:06+00:00       ListAccountAliases    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:07+00:00 ListAttachedRolePolicies    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:07+00:00                ListRoles    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:27:07+00:00                  GetRole    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:14+00:00         AttachUserPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:14+00:00 ListAttachedUserPolicies    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:14+00:00                GetPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:15+00:00                  GetUser    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:18+00:00    ListEntitiesForPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:19+00:00 ListAttachedUserPolicies    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:19+00:00                GetPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:19+00:00             ListPolicies    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:19+00:00         DetachUserPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2019-03-03 16:43:19+00:00    ListEntitiesForPolicy    iam.amazonaws.com     2.7.223.252 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+
+########## G44 | label: unlabelled ##########
+INCIDENT: identity=arn:aws:iam::123456789012:root | ip=84.251.178.39 | hour=2018-08-18 03:00:00+00:00 | identity type=Root | flagged events=2
+HISTORY: this identity was first seen 2017-02-12 and was active on 51 earlier days; it has NEVER used this IP before.
+ACCESS METHOD (incident hour): web console x11, CLI/SDK script x0, AWS internal service x1, other x1
+CONTEXT WINDOW: 2018-08-18 02:00:00+00:00 to 2018-08-18 05:00:00+00:00 | related events=13
+TOP EVENTS IN WINDOW: DescribeAffectedEntities x2, ConsoleLogin x1, GetSessionToken x1, DescribeEvents x1, DescribeEntityAggregates x1, DescribeEventDetails x1, ListAccessKeys x1, GetAccountSummary x1, GetAccountPasswordPolicy x1, ListAccountAliases x1
+OTHER IDENTITIES USING THIS IP: none
+OTHER IPs USED BY THIS IDENTITY: none
+ERRORS: NoSuchEntityException x1
+
+INCIDENT-HOUR EVENTS (13 events, 12 rows shown, repeats merged):
+                eventTime                eventName          eventSource sourceIPAddress                userIdentityarn             errorCode                                userAgent  count
+2018-08-18 03:19:14+00:00             ConsoleLogin signin.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None Mozilla/5.0 (Macintosh; Intel Mac OS X 1      1
+2018-08-18 03:19:14+00:00          GetSessionToken    sts.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                     signin.amazonaws.com      1
+2018-08-18 03:19:19+00:00           DescribeEvents health.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:20+00:00 DescribeEntityAggregates health.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:23+00:00     DescribeEventDetails health.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:29+00:00 DescribeAffectedEntities health.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      2
+2018-08-18 03:19:57+00:00           ListAccessKeys    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:57+00:00        GetAccountSummary    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:57+00:00 GetAccountPasswordPolicy    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root NoSuchEntityException                    console.amazonaws.com      1
+2018-08-18 03:19:57+00:00       ListAccountAliases    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:57+00:00           ListMFADevices    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+2018-08-18 03:19:58+00:00                ListUsers    iam.amazonaws.com   84.251.178.39 arn:aws:iam::123456789012:root                  None                    console.amazonaws.com      1
+

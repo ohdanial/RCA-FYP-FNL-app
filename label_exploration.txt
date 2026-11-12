@@ -1,0 +1,84 @@
+
+=== RunInstances by identity type ===
+userIdentitytype
+IAMUser        708265
+AssumedRole         3
+Root                2
+
+=== RunInstances by error code (top 10) ===
+errorCode
+Client.RequestLimitExceeded            409916
+Client.UnauthorizedOperation           181818
+Client.Unsupported                      55496
+Server.InsufficientInstanceCapacity     33628
+Client.InstanceLimitExceeded            25050
+Client.InvalidParameterValue             2164
+Client.VcpuLimitExceeded                  122
+Client.MissingParameter                    23
+Client.InvalidSubnetID.NotFound            14
+Server.InternalError                        9
+
+=== RunInstances: top 10 user names ===
+userIdentityuserName
+Level6    362760
+backup    345505
+None           5
+
+=== Top 15 error codes (all events) ===
+errorCode
+Client.RequestLimitExceeded            410209
+Client.UnauthorizedOperation           192651
+AccessDenied                           105220
+Client.Unsupported                      55496
+Server.InsufficientInstanceCapacity     33628
+NoSuchBucket                            28811
+Client.InstanceLimitExceeded            25050
+Client.InvalidParameterValue             2402
+Client.DryRunOperation                   1738
+Client.InvalidSnapshot.NotFound          1708
+NoSuchEntityException                    1402
+AccessDeniedException                     983
+NotFoundException                         751
+IllegalLocationConstraintException        744
+ValidationException                       663
+
+=== Top 15 user names ===
+userIdentityuserName
+backup                            580860
+Level6                            533722
+None                              103226
+SecurityMokey                       4522
+flaws                               3242
+piper                                147
+Level5                                39
+HIDDEN_DUE_TO_SECURITY_REASONS        26
+
+=== Top 20 ARNs for non-IAMUser identities ===
+userIdentityarn
+None                                                                                             54530
+arn:aws:sts::811596193553:assumed-role/flaws/i-aa2d3b42e5c6e801a                                 16725
+arn:aws:sts::811596193553:assumed-role/SecurityMonkey/secmonkey                                  12354
+arn:aws:iam::811596193553:root                                                                   10841
+arn:aws:sts::811596193553:assumed-role/SecurityMonkey/cloudaux                                    3993
+arn:aws:sts::811596193553:assumed-role/Level6/Level6                                              3607
+arn:aws:sts::811596193553:assumed-role/aws:ec2-instance/i-aa2d3b42e5c6e801a                       2523
+arn:aws:sts::811596193553:assumed-role/SummitRouteAudit/4032461535040776536                        744
+arn:aws:sts::811596193553:assumed-role/Cloudsploit/cloudsploit_scan                                568
+arn:aws:sts::811596193553:assumed-role/config-role-us-west-2/AWSConfig-Describe                    349
+arn:aws:sts::811596193553:assumed-role/AWSServiceRoleForSupport/AWSServiceRoleForSupport            76
+arn:aws:sts::811596193553:assumed-role/SummitRouteAudit/1229551211742381686                         35
+arn:aws:sts::811596193553:assumed-role/SummitRouteAudit/4115412295494258651                         18
+arn:aws:sts::811596193553:assumed-role/AWSServiceRoleForCloudTrail/CloudTrail                       15
+arn:aws:sts::811596193553:assumed-role/AWSServiceRoleForFMS/AWSFirewallManager                      15
+arn:aws:sts::811596193553:assumed-role/level5/level5                                                10
+arn:aws:sts::811596193553:assumed-role/SummitRouteAudit/7853701554816508637                          5
+arn:aws:sts::811596193553:assumed-role/AWSServiceRoleForOrganizations/AWSOrganizations               5
+arn:aws:sts::811596193553:assumed-role/level6/level6-ec1335a148b902503664e2d162fcdaa98c224ea5        3
+arn:aws:sts::811596193553:assumed-role/config-role-us-west-2/AWSConfig-BucketConfigCheck             3
+
+=== AssumeRole by identity type ===
+userIdentitytype
+AWSService     51901
+IAMUser        20226
+AWSAccount       296
+AssumedRole       15

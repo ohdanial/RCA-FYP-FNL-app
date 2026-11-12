@@ -1,0 +1,14 @@
+.streamlit/secrets.toml
+.env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+BACKUP_10Nov/
+clean_cloudtrail.parquet
+dec12_18features.csv
+features_cloudtrail.parquet
+labelled_v0.parquet
+labelled_v1.parquet
+labelled_v2.parquet
+nineteenFeaturesDf.csv
+scored_cloudtrail.parquet
